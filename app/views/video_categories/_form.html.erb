@@ -1,0 +1,14 @@
+<div class="row">
+  <%= render 'layouts/leftside' %>
+  <div class="span9">
+	<%= form_for(@video_category) do |f| %>
+		<%= render 'shared/error_messages_category' %>
+		
+	  	<%= f.label :category, "Album Name" %>
+	    <%= f.text_field :category %> <br />
+	    
+      	<%= f.submit "Create Album", class: "btn btn-large btn-primary" %>
+      	
+	<% end %>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+	<%= render 'layouts/leftside' %>  
+	<div class="span9">
+		<% if signed_in? %>
+			<% if @album_videos.nil?%>				
+	  			<%= render(@videos)%>
+	  		<% else %>	  			
+	  			<%= render(@album_videos)%>
+	  		<% end %>
+	  		<h6><%= link_to "New Video", newvideo_path%></h6>
+	  	<% else %>
+	  		<h4>Latest Videos added by users</h4>
+	  		<%= render @videos%>
+	  	<% end %>	
+	</div>
+</div>
+

@@ -1,0 +1,21 @@
+<div class="row">
+  <%= render 'layouts/leftside' %>
+  <div class="span9">
+  	<h3>New Video</h3>
+	<%= form_for(@video) do |f| %>
+		<%= render 'shared/error_messages_video' %>
+		
+	  	<%= f.label :video_category_id, "Album" %>
+	    <%= f.collection_select(:video_category_id, current_user.video_categories.all, :id, :category, :include_blank => "Please select...") %> <br />
+	    
+	    <%= f.label :title, "Video Title" %>
+	    <%= f.text_field :title %> <br />
+	    
+	    <%= f.label :url, "Video URL" %>
+	    <%= f.text_field :url %> <br />
+	    
+      	<%= f.submit "Add Video", class: "btn btn-large btn-primary" %>
+      	
+	<% end %>
+  </div>
+</div>

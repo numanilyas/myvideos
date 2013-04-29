@@ -1,0 +1,8 @@
+<% if url.include?("/watch?v=") 
+	url = url.split("/watch?v=").last
+else
+	url = url.split('/').last
+end
+%>
+
+<iframe width="490" height="275" src="http://www.youtube.com/embed/<%=url%>" frameborder="0" allowfullscreen></iframe>

@@ -1,0 +1,12 @@
+<% if @video_category.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-error">
+      The form contains <%= pluralize(@video_category.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @video_category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Listing video_categories</h1>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @video_categories.each do |video_category| %>
+  <tr>
+    <td><%= video_category.category %></td>
+    <td><%= link_to 'Show', video_category %></td>
+    <td><%= link_to 'Edit', edit_video_category_path(video_category) %></td>
+    <td><%= link_to 'Destroy', video_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Video category', new_video_category_path %>
