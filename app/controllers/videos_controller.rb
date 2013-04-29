@@ -26,6 +26,11 @@ class VideosController < ApplicationController
   # GET /videos/new
   # GET /videos/new.json
   def new
+    if current_user.video_categories.count ==0 
+      redirect_to newalbum_url, notice: 'There is no album, please first create an album.'
+      return
+    end
+    
     @video = Video.new
 
     respond_to do |format|
@@ -78,7 +83,7 @@ class VideosController < ApplicationController
     @video.destroy
 
     respond_to do |format|
-      format.html { redirect_to current_user, notice: 'Video was successfully deleted.' }
+      format.html { redirect_to root_url, notice: 'Video was successfully deleted.' }
       format.json { head :no_content }
     end
   end

@@ -80,7 +80,7 @@ class VideoCategoriesController < ApplicationController
     @video_category.destroy
 
     respond_to do |format|
-      format.html { redirect_to current_user, notice: 'Album was successfully deleted.' }
+      format.html { redirect_to root_url, notice: 'Album was successfully deleted.' }
       format.json { head :no_content }
     end
   end
