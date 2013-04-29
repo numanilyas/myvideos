@@ -1,6 +1,6 @@
 <div class="row">
 	<%= render 'layouts/leftside' %>  
-	<div class="span9">
+	<div class="span8" style="padding-left:50px; border-left: 1px solid gray;">
 		<% if signed_in? %>
 			<% if @album_videos.nil?%>				
 	  			<%= render(@videos)%>
@@ -12,6 +12,11 @@
 	  		<h4>Latest Videos added by users</h4>
 	  		<%= render @videos%>
 	  	<% end %>	
+	</div>
+	
+	<div class="span12">
+		<hr style="height:1px;border-width:0;color:gray;background-color:gray"/>
+		<%= render 'layouts/footer' %>		
 	</div>
 </div>
 
