@@ -48,7 +48,7 @@ class VideoCategoriesController < ApplicationController
     logger.info @video_category.category
     respond_to do |format|
       if @video_category.save
-        format.html { redirect_to current_user, notice: 'Album was successfully created.' }
+        format.html { redirect_to root_url, notice: 'Album has been successfully created.' }
         format.json { render json: @video_category, status: :created, location: @video_category }
       else
         format.html { render action: "new" }
