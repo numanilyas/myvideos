@@ -87,6 +87,10 @@ class VideoCategoriesController < ApplicationController
   
   private
   def signed_in_user
+    if params[:action] == 'index' || params[:action] == 'show'
+      redirect_to root_url, notice: "Invalid URL"
+      return
+    end
     store_location
     redirect_to root_url, notice: "Please sign in." unless signed_in?
   end
