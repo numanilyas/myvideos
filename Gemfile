@@ -9,6 +9,9 @@ group :development do
   gem 'sqlite3'  
 end
 
+
+gem 'newrelic_rpm'
+
 gem 'simple_form'
 
 group :production do
